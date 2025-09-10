@@ -1,26 +1,82 @@
 
 // Addition
 function add(a, b){
-    return a + b;
+     let nA = Number(a); //Converting from string to integer
+     let nB = Number (b); //Converting from string to integer
+     operator = null;
+     secondNum = "";
+
+    if (answer == undefined ){
+        answer = nA + nB;
+        
+        return display.textContent = answer;
+    }
+    else {
+        answer = answer + nB;
+        
+        return display.textContent = answer;
+    }
 }
 
 //Subtraction
 function subtract(a, b){
-    return a - b;
+    let nA = Number(a); //Converting from string to integer
+    let nB = Number (b); //Converting from string to integer
+    operator = null;
+    secondNum = "";
+
+    if (answer === undefined ){
+        answer = nA - nB;
+        operator = null;
+    }
+    else {
+        answer = answer - nB;
+        operator = null;
+    }
+
+    return display.textContent = answer;
 }
 //Multiplication
 function multiply(a, b){
-    return a * b;
+    let nA = Number(a); //Converting from string to integer
+    let nB = Number (b); //Converting from string to integer
+    operator = null;
+    secondNum = "";
+
+    if (answer === undefined ){
+        answer = nA * nB;
+        operator = null;
+    }
+    else {
+        answer = answer * nB;
+        operator = null;
+    }
+
+    return display.textContent = answer;
 }
 
 //Division
 function divide(a, b){
-    return a/b;
+    let nA = Number(a); //Converting from string to integer
+    let nB = Number (b); //Converting from string to integer
+    operator = null;
+    secondNum = "";
+
+    if (answer === undefined ){
+        answer = nA/nB;
+        operator = null;
+    }
+    else {
+        answer = answer/nB;
+        operator = null;
+    }
+    return display.textContent = answer;
 }
 
-let firstNum;
-let secondNum;
+let firstNum = "";
+let secondNum = "";
 let operator;
+let answer; // Stores the answer we get from the first calculation
 
 // When called it will decide what method of operation will occur
 function operate(firstNum, secondNum, operator){
@@ -31,10 +87,10 @@ function operate(firstNum, secondNum, operator){
         case "-":
             subtract(firstNum, secondNum);
             break;
-        case "x":
+        case "*":
             multiply(firstNum, secondNum);
             break;
-        case "/":
+        case "÷":
             divide(firstNum, secondNum);
             break;
     }
@@ -51,122 +107,149 @@ const eight = document.querySelector("#eight");
 const nine = document.querySelector("#nine");
 const display = document.querySelector(".display");
 const clear = document.querySelector("#clear");
+const multiplication = document.querySelector("#x");
+const division =  document.querySelector("#division");
+const addition = document.querySelector("#add");
+const subtraction = document.querySelector("#subtract");
+const equals = document.querySelector("#equal");
+
+equals.addEventListener("click", (e) => {
+    
+    return operate(firstNum, secondNum, operator);
+})
+
+multiplication.addEventListener("click", (e) => {
+    return operator = "*"
+})
+
+division.addEventListener("click", (e) => {
+    return operator = "÷";
+})
+
+addition.addEventListener("click", (e) =>{
+    return operator = "+"
+})
+
+subtraction.addEventListener("click", (e) => {
+    return operator = "-"
+})
+
+clear.addEventListener("click", (e) => {
+    firstNum = "";
+    secondNum = "";
+    operator = null;
+    answer = null;
+
+    return display.textContent = 0;
+} )
 
 one.addEventListener("click", (e) => {
     
-    if(firstNum === null){
-        firstNum = 1;
+    if(operator == undefined){   // Tests to see if a number is stored in either and which should it store in
+        firstNum = firstNum + "1";
+        return display.textContent = firstNum;
     }
     else{
-        secondNum = 1;
-        operate(firstNum,secondNum, operator);
+        secondNum = secondNum + "1";
+        return display.textContent = secondNum;
     }
-    
-    return display.textContent = 1;
 });
 
 two.addEventListener("click", (e) => {
 
-     if(firstNum === null){
-        firstNum = 2;
+     if(operator == undefined){
+        firstNum = firstNum + "2";
+        return display.textContent = firstNum;
     }
     else{
-        secondNum = 2;
-        operate(firstNum,secondNum, operator);
+        secondNum = secondNum + "2"
+        return display.textContent = secondNum;
     }
-
-
-    return display.textContent = 2;
 } )
 
 three.addEventListener("click", (e) => {
 
-     if(firstNum === null){
-        firstNum = 3;
+     if(operator == undefined){
+        firstNum = firstNum + "3";
+        return display.textContent = firstNum;
     }
     else{
-        secondNum = 3;
-        operate(firstNum,secondNum, operator);
+        secondNum = secondNum + "3"
+        return display.textContent = secondNum;
     }
-
-    return display.textContent = 3;
 } )
 
 four.addEventListener("click", (e) => {
 
-     if(firstNum === null){
-        firstNum = 4;
+     if(operator == undefined){
+        firstNum = firstNum + "4";
+        return display.textContent = firstNum;
     }
     else{
-        secondNum = 4;
-        operate(firstNum,secondNum, operator);
+        secondNum = secondNum + "4"
+        return display.textContent = secondNum;
     }
-
-    return display.textContent = 4;
 } )
 
 five.addEventListener("click", (e) => {
 
-     if(firstNum === null){
-        firstNum = 5;
+     if(operator == undefined){
+        firstNum = firstNum + "5";
+        return display.textContent = firstNum;
     }
     else{
-        secondNum = 5;
-        operate(firstNum,secondNum, operator);
+        secondNum = secondNum + "5"
+        return display.textContent = secondNum;
     }
-
-    return display.textContent = 5;
 } )
 
 six.addEventListener("click", (e) => {
 
-     if(firstNum === null){
-        firstNum = 6;
+     if(operator == undefined){
+        firstNum = firstNum + "6";
+        return display.textContent = firstNum;
     }
     else{
-        secondNum = 6;
-        operate(firstNum,secondNum, operator);
+        secondNum = secondNum + "6"
+        return display.textContent = secondNum;
     }
-
-    return display.textContent = 6
 } )
 
 seven.addEventListener("click", (e) => {
 
-     if(firstNum === null){
-        firstNum = 7;
+     if(operator == undefined){
+       firstNum = firstNum + "7";
+       return display.textContent = firstNum;
     }
     else{
-        secondNum = 7;
-        operate(firstNum,secondNum, operator);
+        secondNum = secondNum + "7"
+        return display.textContent = secondNum;
     }
-
-    return display.textContent = 7;
 } )
 
 eight.addEventListener("click", (e) => {
 
-     if(firstNum === null){
-        firstNum = 8;
+     if(operator == undefined){
+       firstNum = firstNum + "8";
+       return display.textContent = firstNum;
     }
     else{
-        secondNum = 8;
-        operate(firstNum,secondNum, operator);
+        secondNum = secondNum + "8"
+        return display.textContent = secondNum;
     }
     
-    return display.textContent = 8;
 })
 
 nine.addEventListener("click", (e) => {
 
-     if(firstNum === null){
-        firstNum = 9;
+     if(operator == undefined){
+        firstNum = firstNum + "9";
+        return display.textContent = firstNum;
     }
     else{
-        secondNum = 9;
-        operate(firstNum,secondNum, operator);
+        secondNum = secondNum + "9"
+        return display.textContent = secondNum;
     }
     
-    return display.textContent = 9;
 })
 
