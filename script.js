@@ -147,7 +147,7 @@ equals.addEventListener("click", (e) => {
 
 multiplication.addEventListener("click", (e) => {
    if(operator == ""){
-        operator = "+"
+        operator = "*"
         return display.textContent = firstNum + operator;
     }
     else {
@@ -157,7 +157,7 @@ multiplication.addEventListener("click", (e) => {
 
 division.addEventListener("click", (e) => {
     if(operator == ""){
-        operator = "+"
+        operator = "÷"
         return display.textContent = firstNum + operator;
     }
     else {
