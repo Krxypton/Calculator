@@ -9,37 +9,61 @@ body {
 
 .container {
     display: flex;
-    /* outline: 2px solid red; */
+    outline: 2px solid black;
     border-radius: 15px;
-    width: 350px;
+    width: 340px;
     flex-wrap: wrap;
     height: 400px;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
     background-color: whitesmoke;
- 
+    justify-content: flex-start;
 }
 
-.display {
-    margin-left: 95px;
-    font-size: 80px;
-    margin-bottom: 55px;
-}
-
-.buttons {
-    min-width: 350px;
-    height: 240px;
-   
+.display-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
+    justify-content: flex-end;
+    width: 350px;
+    /* margin-right: 10; */
+    /* outline: 2px solid black; */
+}
+
+.buttons-wrapper {
+    display: flex;
+    /* align-items: flex-end; */
+    height: 250px;
+   
     
 }
 
+.display {
+    margin-left: 10px;
+    font-size: 40px;
+    align-self: flex-end;
+    margin-top: 40px;
+    margin-right: 40px;
+}
+
+.buttons {
+    width: 280px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-self: flex-end;
+    /* margin-top: 30px; */
+    /* justify-content: center; */
+    margin-bottom: 40px;
+}
+
 .buttons > button {
-    width: 70px;
+    width: 60px;
     height: 45px;
     gap: 16px;
     border-radius: 25px;
+    
+}
+
+.container > .buttons {
+    /* flex: 1 1 0; */
 }
