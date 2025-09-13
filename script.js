@@ -146,29 +146,48 @@ equals.addEventListener("click", (e) => {
 })
 
 multiplication.addEventListener("click", (e) => {
-    operator = "*"
-    return display.textContent = firstNum + operator;
-})
-
-division.addEventListener("click", (e) => {
-    operator = "÷";
-    return display.textContent = firstNum + operator;
-})
-
-addition.addEventListener("click", (e) =>{
-    operator = "+"
-    return display.textContent = firstNum + operator;
-})
-
-subtraction.addEventListener("click", (e) => {
-    if(operator == ""){
-        operator = "-"
+   if(operator == ""){
+        operator = "+"
         return display.textContent = firstNum + operator;
     }
     else {
-         secondNum += operator
         return display.textContent = firstNum + operator + secondNum;
     }
+})
+
+division.addEventListener("click", (e) => {
+    if(operator == ""){
+        operator = "+"
+        return display.textContent = firstNum + operator;
+    }
+    else {
+        return display.textContent = firstNum + operator + secondNum;
+    }
+})
+
+addition.addEventListener("click", (e) =>{
+    if(operator == ""){
+        operator = "+"
+        return display.textContent = firstNum + operator;
+    }
+    else {
+        return display.textContent = firstNum + operator + secondNum;
+    }
+})
+
+subtraction.addEventListener("click", (e) => {
+     if(operator == ""){
+        operator = "-"
+        return display.textContent = firstNum + operator;
+    }
+    else if(secondNum == "") {
+        operator = "-"
+        secondNum += operator
+        return display.textContent = firstNum + operator + secondNum;
+    }
+    else {
+       return display.textContent = firstNum + operator + secondNum;
+    }   
 })
 
 clear.addEventListener("click", (e) => {
@@ -192,10 +211,10 @@ zero.addEventListener("click", (e) => {
     }
 })
 one.addEventListener("click", (e) => {
-    
-    if(operator == ""){   // 
+    if(firstNum == ""){   // 
         firstNum = operator + firstNum + "1";
-        return display.textContent = firstNum;
+        display.textContent = firstNum;
+        return operator = "";
     }
     else{
         secondNum = secondNum + "1";
@@ -205,9 +224,10 @@ one.addEventListener("click", (e) => {
 
 two.addEventListener("click", (e) => {
 
-     if(operator == ""){
+     if(firstNum == ""){
         firstNum = operator + firstNum + "2";
-        return display.textContent = firstNum;
+        display.textContent = firstNum;
+        return operator = "";
     }
     else{
         secondNum = secondNum + "2"
@@ -217,9 +237,10 @@ two.addEventListener("click", (e) => {
 
 three.addEventListener("click", (e) => {
 
-    if(operator == ""){   // 
+    if(firstNum == ""){   // 
         firstNum = operator + firstNum + "3";
-        return display.textContent = firstNum;
+        display.textContent = firstNum;
+        return operator = "";
     }
     else{
         secondNum = secondNum + "3";
@@ -231,7 +252,8 @@ four.addEventListener("click", (e) => {
 
     if(operator == ""){   
         firstNum = operator + firstNum + "4";
-        return display.textContent = firstNum;
+        display.textContent = firstNum;
+        return operator = "";
     }
     else{
         secondNum = secondNum + "4";
@@ -243,7 +265,8 @@ five.addEventListener("click", (e) => {
  
     if(operator == ""){   
         firstNum = operator + firstNum + "5";
-        return display.textContent = firstNum;
+        display.textContent = firstNum;
+        return operator = "";
     }
     else{
         secondNum =  secondNum + "5";
@@ -255,7 +278,8 @@ six.addEventListener("click", (e) => {
  
     if(operator == ""){   
         firstNum = operator + firstNum + "6";
-        return display.textContent = firstNum;
+        display.textContent = firstNum;
+        return operator = "";
     }
     else{
         secondNum = secondNum + "6";
@@ -267,7 +291,8 @@ seven.addEventListener("click", (e) => {
 
     if(operator == ""){    
         firstNum = operator + firstNum + "7";
-        return display.textContent = firstNum;
+        display.textContent = firstNum;
+        return operator = "";
     }
     else{
         secondNum = secondNum + "7";
@@ -279,7 +304,8 @@ eight.addEventListener("click", (e) => {
 
     if(operator == ""){   // 
         firstNum = operator + firstNum + "8";
-        return display.textContent = firstNum;
+        display.textContent = firstNum;
+        return operator = "";
     }
     else{
         secondNum =  secondNum + "8";
@@ -292,7 +318,8 @@ nine.addEventListener("click", (e) => {
      
     if(operator == ""){   // 
         firstNum = operator + firstNum + "9";
-        return display.textContent = firstNum;
+        display.textContent = firstNum;
+        return operator = "";
     }
     else{
         secondNum =  secondNum + "9";
